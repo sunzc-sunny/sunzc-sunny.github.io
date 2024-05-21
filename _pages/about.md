@@ -13,3 +13,16 @@ News
 ======
 \[2024/05\] One paper is early accepted by MICCAI 2024.
 
+Publications
+======
++ **Zhichao Sun**, Yuliang Gu, Yepeng Liu, Zerui Zhang, Zhou Zhao, and Yongchao Xu. Position-Guided Prompt Learning for Anomaly Detection in Chest X-Rays MICCAI 2024
++ Yuliang Gu, **Zhichao Sun**, Xin Xiao, Yuda Zou, Zelong Liu, Yongchao Xu. Dual Structure-Preserving Image Filterings for Semi-supervised Medical Image Segmentation arXiv 2023
++ Yuda Zou, Xin Xiao, Peilin Zhou, **Zhichao Sun**, Bo Du, Yongchao Xu. Noised Autoencoders for Point Annotation Restoration in Object Counting arXiv 2023
+
+
+Awards
+======
++ 2022 Huawei Intelligent Base Scholarship
++ 2021 China Star Optoelectronics Technology Company Scholarship
++ 2020 National Encouragement Scholarship
++ 2017 First Prize in the Chinese Chemistry Olympiad
