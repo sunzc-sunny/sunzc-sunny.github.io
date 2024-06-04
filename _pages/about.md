@@ -11,7 +11,7 @@ I am a PhD student at School of Computer Science, Wuhan Unviersity, supervised b
 
 News
 ======
-\[2024/05\] One paper is early accepted by MICCAI 2024.
+\[2024/05\] Two papers are early accepted by MICCAI 2024.
 
 Publications
 ======
