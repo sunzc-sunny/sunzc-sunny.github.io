@@ -11,9 +11,9 @@ I am a PhD student at School of Computer Science, Wuhan Unviersity, supervised b
 
 News
 ======
-\[2024/06\] One paper is accepted by ECCV 2024.
-\[2024/06\] One paper is accepted by IVC 2024.
-\[2024/05\] Two papers are early accepted by MICCAI 2024.
++ \[2024/06\] One paper is accepted by ECCV 2024.
++ \[2024/06\] One paper is accepted by IVC 2024.
++ \[2024/05\] Two papers are early accepted by MICCAI 2024.
 
 Publications
 ======
