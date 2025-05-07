@@ -19,6 +19,8 @@ News
 
 Publications
 ======
++ **Zhichao Sun**, Huazhang Hu, Yidong Ma, Gang Liu, Nemo Chen, Xu Tang, Yao Hu, Yongchao Xu. CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection *[Arixv 2025](https://arxiv.org/abs/2503.18430)* [CODE](https://github.com/RedAIGC/CQ-DINO)
++ **Zhichao Sun**, Yepeng Liu, Huachao Zhu, Yuliang Gu, Yuda Zou, Zelong Liu, Gui-Song Xia, Bo Du, Yongchao Xu. RefDrone: A Challenging Benchmark for Referring Expression Comprehension in Drone Scenes *[Arxiv 2025](https://arxiv.org/abs/2502.00392)* [CODE](https://github.com/sunzc-sunny/refdrone)
 + Yuliang Gu, **Zhichao Sun**, Tian Chen, Xin Xiao, Yepeng Liu, Yongchao Xu, Laurent Najman. Dual Structure-Preserving Image Filterings for Semi-supervised Medical Image Segmentation *[MIA 2024]([https://arxiv.org/abs/2312.07264](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002895))* 
 + **Zhichao Sun**, Yuliang Gu, Yepeng Liu, Zerui Zhang, Zhou Zhao, Yongchao Xu. Position-Guided Prompt Learning for Anomaly Detection in Chest X-Rays *[MICCAI 2024](https://arxiv.org/abs/2405.11976)* [CODE](https://github.com/sunzc-sunny/PPAD)
 + Zerui Zhang, **Zhichao Sun**, Zelong Liu, Bo Du, Rui Yu, Zhou Zhao, Yongchao Xu. Spatial-aware Attention Generative Adversarial Network for Semi-supervised Anomaly Detection in Medical Image  *[MICCAI 2024](https://arxiv.org/abs/2405.12872)* [CODE](https://github.com/zzr728/SAGAN)
