@@ -33,7 +33,6 @@ Publications
 
 Awards
 ======
-+ 2022 Huawei Intelligent Base Scholarship
 + 2021 China Star Optoelectronics Technology Company Scholarship
 + 2020 National Encouragement Scholarship
 + 2017 First Prize in the Chinese Chemistry Olympiad
