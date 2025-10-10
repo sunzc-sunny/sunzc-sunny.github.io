@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a third year PhD student at School of Computer Science, Wuhan Unviersity, supervised by Prof. [Yongchao Xu](https://scholar.google.fr/citations?user=ArIg7-0AAAAJ&hl=fr), since 2022 fall. Previously, I received BE degree at School of Electronic Information and Communications, Huazhong University of Science and Technology.
+I am a fourth year PhD student at School of Computer Science, Wuhan Unviersity, supervised by Prof. [Yongchao Xu](https://scholar.google.fr/citations?user=ArIg7-0AAAAJ&hl=fr), since 2022 fall. Previously, I received BE degree at School of Electronic Information and Communications, Huazhong University of Science and Technology.
 
 News
 ======
@@ -20,7 +20,7 @@ News
 
 Publications
 ======
-+ **Zhichao Sun**, Huazhang Hu, Yidong Ma, Gang Liu, Nemo Chen, Xu Tang, Yao Hu, Yongchao Xu. CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection *[NeurIPS 2025](https://arxiv.org/abs/2503.18430)* [CODE](https://github.com/RedAIGC/CQ-DINO)
++ **Zhichao Sun**, Huazhang Hu, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu. CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection *[NeurIPS 2025](https://arxiv.org/abs/2503.18430)* [CODE](https://github.com/FireRedTeam/CQ-DINO)
 + Yuliang Gu, **Zhichao Sun**, Tian Chen, Xin Xiao, Yepeng Liu, Yongchao Xu, Laurent Najman. Dual Structure-Preserving Image Filterings for Semi-supervised Medical Image Segmentation *[MIA 2024](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002895)* [CODE](https://github.com/GuGuLL123/DSAIF-SEMI)
 + **Zhichao Sun**, Yuliang Gu, Yepeng Liu, Zerui Zhang, Zhou Zhao, Yongchao Xu. Position-Guided Prompt Learning for Anomaly Detection in Chest X-Rays *[MICCAI 2024](https://arxiv.org/abs/2405.11976)* [CODE](https://github.com/sunzc-sunny/PPAD)
 + Zerui Zhang, **Zhichao Sun**, Zelong Liu, Bo Du, Rui Yu, Zhou Zhao, Yongchao Xu. Spatial-aware Attention Generative Adversarial Network for Semi-supervised Anomaly Detection in Medical Image  *[MICCAI 2024](https://arxiv.org/abs/2405.12872)* [CODE](https://github.com/zzr728/SAGAN)
@@ -41,10 +41,10 @@ Awards
 
 Career & Education History
 ======
-+ 2024.09~Present     Intern                Xiaohongshu
++ 2024.09~Present     Intern                Xiaohongshu AIGC
 + 2022.09~Present     PhD student           School of Computer Science, Wuhan Unviersity
 + 2018.09~2022.06     Undergrad student     School of Electronic Information and Communications, Huazhong University of Science and Technology
 
 Service
 ======
-+ Reviewer: MICCAI2025
++ Reviewer: MICCAI 2025
