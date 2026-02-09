@@ -11,6 +11,7 @@ I am a fourth year PhD student at School of Computer Science, Wuhan Unviersity, 
 
 News
 ======
++ \[2026/01\] One paper is accepted by ICLR 2026.
 + \[2025/09\] One paper is accepted by NeurIPS 2025.
 + \[2024/09\] One paper is accepted by MIA 2024.
 + \[2024/08\] One paper is accepted by BIBM 2024.
@@ -20,6 +21,7 @@ News
 
 Publications
 ======
++ **Zhichao Sun**, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu. IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning *[ICLR 2026](https://www.arxiv.org/abs/2602.03060)* [CODE](https://github.com/FireRedTeam/IVC-Prune)
 + **Zhichao Sun**, Huazhang Hu, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu. CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection *[NeurIPS 2025](https://arxiv.org/abs/2503.18430)* [CODE](https://github.com/FireRedTeam/CQ-DINO)
 + Yuliang Gu, **Zhichao Sun**, Tian Chen, Xin Xiao, Yepeng Liu, Yongchao Xu, Laurent Najman. Dual Structure-Preserving Image Filterings for Semi-supervised Medical Image Segmentation *[MIA 2024](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002895)* [CODE](https://github.com/GuGuLL123/DSAIF-SEMI)
 + **Zhichao Sun**, Yuliang Gu, Yepeng Liu, Zerui Zhang, Zhou Zhao, Yongchao Xu. Position-Guided Prompt Learning for Anomaly Detection in Chest X-Rays *[MICCAI 2024](https://arxiv.org/abs/2405.11976)* [CODE](https://github.com/sunzc-sunny/PPAD)
