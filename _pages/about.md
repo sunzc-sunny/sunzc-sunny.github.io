@@ -11,7 +11,7 @@ I am a fourth year PhD student at School of Computer Science, Wuhan Unviersity, 
 
 News
 ======
-+ \[2026/01\] One paper is accepted by CVPR 2026 Findings.
++ \[2026/02\] One paper is accepted by CVPR 2026 Findings.
 + \[2026/01\] One paper is accepted by ICLR 2026.
 + \[2025/09\] One paper is accepted by NeurIPS 2025.
 + \[2024/09\] One paper is accepted by MIA 2024.
