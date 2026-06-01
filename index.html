@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zhicheng Sun | Academic Homepage</title>
+  <title>Zhichao Sun | Academic Homepage</title>
   <style>
     /* ===== Reset & Base ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -358,7 +358,7 @@
 <nav>
   <div class="container">
     <div class="nav-inner">
-      <span class="nav-logo" id="nav-name">Zhicheng Sun</span>
+      <span class="nav-logo" id="nav-name">Zhi Sun</span>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#news">News</a>
@@ -377,7 +377,7 @@
         <span class="avatar-placeholder" id="avatar-placeholder">Z</span>
       </div>
       <div class="hero-info">
-        <h1 class="hero-name" id="hero-name">Zhicheng Sun</h1>
+        <h1 class="hero-name" id="hero-name">Zhichao Sun</h1>
         <p class="hero-name-cn" id="hero-name-cn">孙智超</p>
         <p class="hero-title" id="hero-title">Ph.D. Student in Computer Science</p>
         <p class="hero-affil" id="hero-affil">School of Computer Science, Wuhan University</p>
@@ -458,24 +458,24 @@
 // DATA — edit this section to personalize your homepage
 // ============================================================
 const DATA = {
-  name: 'Zhicheng Sun',
+  name: 'Zhichao Sun',
   nameCn: '孙智超',
   title: 'Ph.D. Student in Computer Science',
   institution: 'Wuhan University',
   department: 'School of Computer Science',
   email: 'sunzhichao@whu.edu.cn',
-  googleScholar: 'https://scholar.google.com',
+  googleScholar: 'https://scholar.google.com/citations?user=Bf0ukvsAAAAJ&hl=zh-CN',
   github: 'https://github.com/sunzc-sunny',
-  avatarUrl: '',
+  avatarUrl: 'photo.jpeg',
 
   bio: [
     'I am a fourth year PhD student at School of Computer Science, Wuhan University, supervised by Prof. <a href="https://scholar.google.fr/citations?user=ArIg7-0AAAAJ&hl=fr" target="_blank">Yongchao Xu</a>, since 2022 fall. Previously, I received BE degree at School of Electronic Information and Communications, Huazhong University of Science and Technology.',
   ],
 
   interests: [
+    'Vision-Language Models',
     'Computer Vision',
     'Object Detection',
-    'Vision-Language Models',
     'Medical Image Analysis',
     'Multimodal Learning',
   ],
@@ -502,6 +502,7 @@ const DATA = {
       authors: 'Zhichao Sun, Yepeng Liu, Zhiling Su, Huachao Zhu, Yuliang Gu, Yuda Zou, Zelong Liu, Gui-Song Xia, Bo Du, Yongchao Xu',
       tags: ['Drone', 'Referring Expression', 'Benchmark'],
       pdf: 'https://arxiv.org/abs/2502.00392', code: 'https://github.com/sunzc-sunny/refdrone',
+      poster: 'cvpr_poster_refdrone.png'
     },
     {
       id: 'pub2', year: 2026, venue: 'ICLR', highlight: true,
@@ -509,6 +510,7 @@ const DATA = {
       authors: 'Zhichao Sun, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu',
       tags: ['LVLM', 'Token Pruning', 'Efficiency'],
       pdf: 'https://www.arxiv.org/abs/2602.03060', code: 'https://github.com/FireRedTeam/IVC-Prune',
+      poster: 'IVC-Prune-Poster.png'
     },
     {
       id: 'pub3', year: 2025, venue: 'NeurIPS', highlight: true,
@@ -516,6 +518,7 @@ const DATA = {
       authors: 'Zhichao Sun, Huazhang Hu, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu',
       tags: ['Object Detection', 'Category Queries', 'DETR'],
       pdf: 'https://arxiv.org/abs/2503.18430', code: 'https://github.com/FireRedTeam/CQ-DINO',
+      poster: 'CQ-DINO-Poster.png'
     },
     {
       id: 'pub4', year: 2024, venue: 'MIA',
@@ -525,11 +528,12 @@ const DATA = {
       pdf: 'https://www.sciencedirect.com/science/article/abs/pii/S1361841524002895', code: 'https://github.com/GuGuLL123/DSAIF-SEMI',
     },
     {
-      id: 'pub5', year: 2024, venue: 'MICCAI',
+      id: 'pub5', year: 2024, venue: 'MICCAI', highlight: true,
       title: 'Position-Guided Prompt Learning for Anomaly Detection in Chest X-Rays',
       authors: 'Zhichao Sun, Yuliang Gu, Yepeng Liu, Zerui Zhang, Zhou Zhao, Yongchao Xu',
       tags: ['Anomaly Detection', 'Prompt Learning', 'Medical'],
       pdf: 'https://arxiv.org/abs/2405.11976', code: 'https://github.com/sunzc-sunny/PPAD',
+      poster: '578poster.png'
     },
     {
       id: 'pub6', year: 2024, venue: 'MICCAI',
@@ -555,13 +559,14 @@ const DATA = {
   ],
 
   awards: [
-    { name: 'China Star Optoelectronics Technology Company Scholarship', year: '2021', organization: 'HUST' },
+    { name: 'Huawei Intelligent Base Scholarship', year: '2022', organization: 'Huawei' },
+    { name: 'China Star Optoelectronics Technology Company Scholarship', year: '2021', organization: 'China Star Optoelectronics Technology' },
     { name: 'National Encouragement Scholarship', year: '2020', organization: 'Ministry of Education of China' },
     { name: 'First Prize in the Chinese Chemistry Olympiad', year: '2017', organization: 'Chinese Chemical Society' },
   ],
 
   service: [
-    'Reviewer: MICCAI 2025, FCS 2024/2025, IVC 2024',
+    'Reviewer: ECCV 2026, MICCAI 2026/2025, FCS 2024/2025, IVC 2024',
   ],
 };
 
@@ -701,6 +706,7 @@ function renderPubList() {
     var links = [
       p.pdf ? '<a class="pub-link" href="' + esc(p.pdf) + '" target="_blank">[PDF]</a>' : '',
       p.code ? '<a class="pub-link" href="' + esc(p.code) + '" target="_blank">[Code]</a>' : '',
+      p.poster ? '<a class="pub-link" href="' + esc(p.poster) + '" target="_blank">[Poster]</a>' : '',
       p.project ? '<a class="pub-link" href="' + esc(p.project) + '" target="_blank">[Project]</a>' : '',
     ].filter(Boolean).join('');
     return '<div class="pub-card' + (p.highlight ? ' highlight' : '') + '">' +
