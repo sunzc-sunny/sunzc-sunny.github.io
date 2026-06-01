@@ -220,7 +220,6 @@
     .edu-degree { font-size: 14px; font-weight: 500; color: var(--text-title); margin-bottom: 2px; }
     .edu-school { font-size: 13px; color: var(--text-paragraph); margin-bottom: 2px; }
     .edu-year { font-size: 13px; color: var(--text-description); }
-    .edu-advisor { font-size: 13px; color: var(--text-description); }
 
     /* ===== Awards ===== */
     .awards-list { display: flex; flex-direction: column; gap: 12px; }
@@ -232,6 +231,8 @@
     /* ===== About Me ===== */
     .bio-text { font-size: 14px; color: var(--text-paragraph); line-height: 1.8; }
     .bio-text + .bio-text { margin-top: 12px; }
+    .bio-text a { color: var(--primary); text-decoration: underline; }
+    .bio-text a:hover { color: var(--primary-hover); }
 
     /* ===== News ===== */
     .news-list { display: flex; flex-direction: column; }
@@ -315,41 +316,15 @@
     .pub-link { font-size: 13px; color: var(--primary); }
     .pub-link:hover { color: var(--primary-hover); }
 
-    /* ===== Talks ===== */
-    .talks-list { display: flex; flex-direction: column; }
-    .talk-item {
-      padding: 16px 0;
+    /* ===== Service ===== */
+    .service-list { display: flex; flex-direction: column; }
+    .service-item {
+      padding: 12px 0;
       border-bottom: 1px solid var(--line-divider);
+      font-size: 14px;
+      color: var(--text-paragraph);
     }
-    .talk-item:last-child { border-bottom: none; }
-    .talk-title { font-size: 14px; font-weight: 500; color: var(--text-title); margin-bottom: 4px; }
-    .talk-meta { font-size: 13px; color: var(--text-description); }
-
-    /* ===== Life & Interests ===== */
-    .life-intro { font-size: 14px; color: var(--text-description); line-height: 1.8; margin-bottom: 20px; }
-    .hobbies-grid { display: flex; flex-direction: column; gap: 12px; }
-    .hobby-card {
-      border-radius: var(--radius-md);
-      border: 1px solid var(--line-divider);
-      padding: 16px;
-      background: var(--bg-1);
-      transition: border-color 0.18s;
-    }
-    .hobby-card:hover { border-color: var(--primary-light-hover); }
-    .hobby-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-    .hobby-emoji { font-size: 18px; line-height: 1; }
-    .hobby-cat { font-size: 14px; font-weight: 600; color: var(--text-title); }
-    .hobby-desc { font-size: 13px; color: var(--text-paragraph); line-height: 1.7; margin-bottom: 10px; }
-    .hobby-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-    .hobby-tag {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--primary-light);
-      color: var(--primary);
-      font-size: 12px;
-      border: 1px solid var(--primary-light-hover);
-    }
+    .service-item:last-child { border-bottom: none; }
 
     /* ===== Footer ===== */
     footer {
@@ -388,8 +363,7 @@
         <a href="#about">About</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
-        <a href="#talks">Talks</a>
-        <a href="#life">Life</a>
+        <a href="#service">Service</a>
       </div>
     </div>
   </div>
@@ -404,13 +378,13 @@
       </div>
       <div class="hero-info">
         <h1 class="hero-name" id="hero-name">Zhicheng Sun</h1>
-        <p class="hero-name-cn" id="hero-name-cn">孙志成</p>
-        <p class="hero-title" id="hero-title">Ph.D. Student in Artificial Intelligence</p>
-        <p class="hero-affil" id="hero-affil">School of Intelligence Science and Technology, Peking University</p>
+        <p class="hero-name-cn" id="hero-name-cn">孙智超</p>
+        <p class="hero-title" id="hero-title">Ph.D. Student in Computer Science</p>
+        <p class="hero-affil" id="hero-affil">School of Computer Science, Wuhan University</p>
         <div class="contact-links">
-          <a class="contact-btn primary-light" id="email-btn" href="mailto:sunzc@stu.pku.edu.cn">
+          <a class="contact-btn primary-light" id="email-btn" href="mailto:sunzhichao@whu.edu.cn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span id="email-text">sunzc@stu.pku.edu.cn</span>
+            <span id="email-text">sunzhichao@whu.edu.cn</span>
           </a>
           <a class="contact-btn fill" id="scholar-btn" href="https://scholar.google.com" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
@@ -437,7 +411,7 @@
         <ul class="interests-list" id="interests-list"></ul>
       </div>
       <div class="card">
-        <h2 class="card-title"><span class="card-title-bar bar-primary"></span>Education</h2>
+        <h2 class="card-title"><span class="card-title-bar bar-primary"></span>Career & Education</h2>
         <div class="edu-list" id="edu-list"></div>
       </div>
       <div class="card">
@@ -465,15 +439,9 @@
         <div class="pub-list" id="pub-list"></div>
       </div>
 
-      <div class="card" id="talks">
-        <h2 class="card-title"><span class="card-title-bar bar-info"></span>Talks</h2>
-        <div class="talks-list" id="talks-list"></div>
-      </div>
-
-      <div class="card" id="life">
-        <h2 class="card-title"><span class="card-title-bar bar-warning"></span>Life &amp; Interests</h2>
-        <p class="life-intro" id="life-intro"></p>
-        <div class="hobbies-grid" id="hobbies-grid"></div>
+      <div class="card" id="service">
+        <h2 class="card-title"><span class="card-title-bar bar-info"></span>Service</h2>
+        <div class="service-list" id="service-list"></div>
       </div>
     </main>
   </div>
@@ -491,118 +459,119 @@
 // ============================================================
 const DATA = {
   name: 'Zhicheng Sun',
-  nameCn: '孙志成',
-  title: 'Ph.D. Student in Artificial Intelligence',
-  institution: 'Peking University',
-  department: 'School of Intelligence Science and Technology',
-  email: 'sunzc@stu.pku.edu.cn',
+  nameCn: '孙智超',
+  title: 'Ph.D. Student in Computer Science',
+  institution: 'Wuhan University',
+  department: 'School of Computer Science',
+  email: 'sunzhichao@whu.edu.cn',
   googleScholar: 'https://scholar.google.com',
   github: 'https://github.com/sunzc-sunny',
-  // Replace with your real photo URL after uploading to GitHub repo
   avatarUrl: '',
 
   bio: [
-    'I am a Ph.D. student at the School of Intelligence Science and Technology, Peking University, under the supervision of Prof. XXX. My research focuses on Large Language Models (LLMs), Multimodal Learning, and AI for Science.',
-    'Before that, I received my B.S. degree from Peking University in 2021. I have interned at leading AI research labs including Tencent AI Lab, Alibaba DAMO Academy, and Microsoft Research Asia.',
-    'My research goal is to build AI systems that can reason, perceive, and act in the real world, bridging the gap between artificial intelligence and human intelligence.',
+    'I am a fourth year PhD student at School of Computer Science, Wuhan University, supervised by Prof. <a href="https://scholar.google.fr/citations?user=ArIg7-0AAAAJ&hl=fr" target="_blank">Yongchao Xu</a>, since 2022 fall. Previously, I received BE degree at School of Electronic Information and Communications, Huazhong University of Science and Technology.',
   ],
 
   interests: [
-    'Large Language Models',
+    'Computer Vision',
+    'Object Detection',
+    'Vision-Language Models',
+    'Medical Image Analysis',
     'Multimodal Learning',
-    'Visual Question Answering',
-    'Knowledge Representation',
-    'AI for Science',
   ],
 
   education: [
-    { degree: 'Ph.D. in Artificial Intelligence', school: 'Peking University', year: '2021 – Present', advisor: 'Advisor: Prof. XXX' },
-    { degree: 'B.S. in Computer Science', school: 'Peking University', year: '2017 – 2021' },
+    { degree: 'Intern', school: 'Xiaohongshu AIGC', year: '2024.09 – Present' },
+    { degree: 'Ph.D. Student', school: 'School of Computer Science, Wuhan University', year: '2022.09 – Present' },
+    { degree: 'Undergrad Student', school: 'School of Electronic Information and Communications, HUST', year: '2018.09 – 2022.06' },
   ],
 
   news: [
-    { date: 'Jun 2025', content: 'One paper accepted at ACL 2025 on multimodal reasoning.' },
-    { date: 'May 2025', content: 'Invited talk at VALSE 2025 Workshop on Vision-Language Models.' },
-    { date: 'Feb 2025', content: 'One paper accepted at ICLR 2025 on knowledge-grounded generation.' },
-    { date: 'Sep 2024', content: 'One paper accepted at NeurIPS 2024 on instruction tuning for LLMs.' },
-    { date: 'Jul 2024', content: 'Started internship at Microsoft Research Asia.' },
+    { date: 'Feb 2026', content: 'One paper is accepted by CVPR 2026 Findings.' },
+    { date: 'Jan 2026', content: 'One paper is accepted by ICLR 2026.' },
+    { date: 'Sep 2025', content: 'One paper is accepted by NeurIPS 2025.' },
+    { date: 'Sep 2024', content: 'One paper is accepted by MIA 2024.' },
+    { date: 'Aug 2024', content: 'One paper is accepted by BIBM 2024.' },
+    { date: 'May 2024', content: 'Two papers are early accepted by MICCAI 2024.' },
   ],
 
   publications: [
     {
-      id: 'pub1', year: 2025, venue: 'ACL', highlight: true,
-      title: 'Towards Robust Multimodal Reasoning: A Comprehensive Benchmark and Analysis',
-      authors: 'Zhicheng Sun, Author B, Author C, Prof. XXX',
-      tags: ['Multimodal', 'Reasoning', 'Benchmark'],
-      pdf: '#', code: '#',
+      id: 'pub1', year: 2026, venue: 'CVPR', highlight: true,
+      title: 'RefDrone: A Challenging Benchmark for Drone Scene Referring Expression Comprehension',
+      authors: 'Zhichao Sun, Yepeng Liu, Zhiling Su, Huachao Zhu, Yuliang Gu, Yuda Zou, Zelong Liu, Gui-Song Xia, Bo Du, Yongchao Xu',
+      tags: ['Drone', 'Referring Expression', 'Benchmark'],
+      pdf: 'https://arxiv.org/abs/2502.00392', code: 'https://github.com/sunzc-sunny/refdrone',
     },
     {
-      id: 'pub2', year: 2025, venue: 'ICLR', highlight: true,
-      title: 'Knowledge-Grounded Text Generation with Factual Consistency',
-      authors: 'Zhicheng Sun, Author D, Prof. XXX',
-      tags: ['LLM', 'Knowledge', 'Generation'],
-      pdf: '#', code: '#',
+      id: 'pub2', year: 2026, venue: 'ICLR', highlight: true,
+      title: 'IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning',
+      authors: 'Zhichao Sun, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu',
+      tags: ['LVLM', 'Token Pruning', 'Efficiency'],
+      pdf: 'https://www.arxiv.org/abs/2602.03060', code: 'https://github.com/FireRedTeam/IVC-Prune',
     },
     {
-      id: 'pub3', year: 2024, venue: 'NeurIPS',
-      title: 'Instruction Tuning with Diverse Feedback: Aligning LLMs to Human Preferences',
-      authors: 'Author E, Zhicheng Sun, Author F, Prof. XXX',
-      tags: ['LLM', 'RLHF', 'Alignment'],
-      pdf: '#', project: '#',
+      id: 'pub3', year: 2025, venue: 'NeurIPS', highlight: true,
+      title: 'CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection',
+      authors: 'Zhichao Sun, Huazhang Hu, Yidong Ma, Gang Liu, Yibo Chen, Xu Tang, Yao Hu, Yongchao Xu',
+      tags: ['Object Detection', 'Category Queries', 'DETR'],
+      pdf: 'https://arxiv.org/abs/2503.18430', code: 'https://github.com/FireRedTeam/CQ-DINO',
     },
     {
-      id: 'pub4', year: 2024, venue: 'EMNLP',
-      title: 'Visual Chain-of-Thought Prompting for Complex Scene Understanding',
-      authors: 'Zhicheng Sun, Author G, Author H',
-      tags: ['Multimodal', 'Chain-of-Thought', 'Vision-Language'],
-      pdf: '#', code: '#',
+      id: 'pub4', year: 2024, venue: 'MIA',
+      title: 'Dual Structure-Preserving Image Filterings for Semi-supervised Medical Image Segmentation',
+      authors: 'Yuliang Gu, Zhichao Sun, Tian Chen, Xin Xiao, Yepeng Liu, Yongchao Xu, Laurent Najman',
+      tags: ['Medical Image', 'Segmentation', 'Semi-supervised'],
+      pdf: 'https://www.sciencedirect.com/science/article/abs/pii/S1361841524002895', code: 'https://github.com/GuGuLL123/DSAIF-SEMI',
     },
     {
-      id: 'pub5', year: 2023, venue: 'ACL Findings',
-      title: 'SciMind: A Scientific Question Answering Dataset with Expert Annotations',
-      authors: 'Zhicheng Sun, Author I, Author J, Prof. XXX',
-      tags: ['AI for Science', 'QA', 'Dataset'],
-      pdf: '#',
+      id: 'pub5', year: 2024, venue: 'MICCAI',
+      title: 'Position-Guided Prompt Learning for Anomaly Detection in Chest X-Rays',
+      authors: 'Zhichao Sun, Yuliang Gu, Yepeng Liu, Zerui Zhang, Zhou Zhao, Yongchao Xu',
+      tags: ['Anomaly Detection', 'Prompt Learning', 'Medical'],
+      pdf: 'https://arxiv.org/abs/2405.11976', code: 'https://github.com/sunzc-sunny/PPAD',
     },
     {
-      id: 'pub6', year: 2023, venue: 'CVPR',
-      title: 'Multimodal Pretraining with Cross-Modal Contrastive Learning',
-      authors: 'Author K, Zhicheng Sun, Prof. XXX',
-      tags: ['Multimodal', 'Pretraining', 'Contrastive Learning'],
-      pdf: '#', code: '#',
+      id: 'pub6', year: 2024, venue: 'MICCAI',
+      title: 'Spatial-aware Attention Generative Adversarial Network for Semi-supervised Anomaly Detection in Medical Image',
+      authors: 'Zerui Zhang, Zhichao Sun, Zelong Liu, Bo Du, Rui Yu, Zhou Zhao, Yongchao Xu',
+      tags: ['Anomaly Detection', 'GAN', 'Medical'],
+      pdf: 'https://arxiv.org/abs/2405.12872', code: 'https://github.com/zzr728/SAGAN',
+    },
+    {
+      id: 'pub7', year: 2024, venue: 'IVC',
+      title: 'Nighttime Image Semantic Segmentation with Retinex Theory',
+      authors: 'Zhichao Sun, Huachao Zhu, Xin Xiao, Yuliang Gu, Yongchao Xu',
+      tags: ['Semantic Segmentation', 'Nighttime', 'Retinex'],
+      pdf: 'https://www.sciencedirect.com/science/article/pii/S0262885624002543', code: 'https://github.com/sunzc-sunny/RNightSeg',
+    },
+    {
+      id: 'pub8', year: 2024, venue: 'BIBM',
+      title: 'Shape Transformation Driven by Active Contour for Class-Imbalanced Semi-Supervised Medical Image Segmentation',
+      authors: 'Yuliang Gu, Zhichao Sun, Yepeng Liu, Jinchi Zhu, Yongchao Xu, Laurent Najman',
+      tags: ['Medical Image', 'Segmentation', 'Active Contour'],
+      pdf: 'https://arxiv.org/abs/2410.14210', code: 'https://github.com/GuGuLL123/STAC',
     },
   ],
 
   awards: [
-    { name: 'National Scholarship', year: '2023', organization: 'Ministry of Education of China' },
-    { name: 'Peking University Academic Excellence Award', year: '2022', organization: 'Peking University' },
-    { name: 'Outstanding Graduate Student', year: '2021', organization: 'Peking University' },
+    { name: 'China Star Optoelectronics Technology Company Scholarship', year: '2021', organization: 'HUST' },
+    { name: 'National Encouragement Scholarship', year: '2020', organization: 'Ministry of Education of China' },
+    { name: 'First Prize in the Chinese Chemistry Olympiad', year: '2017', organization: 'Chinese Chemical Society' },
   ],
 
-  talks: [
-    { title: 'Multimodal Reasoning in the Era of Large Language Models', event: 'VALSE 2025 Workshop', date: 'May 2025', location: 'Chengdu, China' },
-    { title: 'Knowledge-Grounded Generation for Factual Consistency', event: 'Microsoft Research Asia Seminar', date: 'Sep 2024', location: 'Beijing, China' },
+  service: [
+    'Reviewer: MICCAI 2025, FCS 2024/2025, IVC 2024',
   ],
-
-  life: {
-    intro: 'Beyond academia, I enjoy a variety of hobbies that keep me inspired and energized. I believe a well-rounded life fuels creativity in research.',
-    hobbies: [
-      { icon: '🎵', category: 'Music', desc: 'I play guitar and enjoy listening to jazz and classical music. Music helps me unwind after long research sessions.', tags: ['Guitar', 'Jazz', 'Classical', 'Piano'] },
-      { icon: '📷', category: 'Photography', desc: 'Street photography and landscape shots during travels. I love capturing fleeting moments and natural beauty.', tags: ['Street', 'Landscape', 'Film', 'Portrait'] },
-      { icon: '🏀', category: 'Sports', desc: 'Basketball, hiking, and cycling to stay active and clear my mind. Sports teach me teamwork and persistence.', tags: ['Basketball', 'Hiking', 'Cycling', 'Swimming'] },
-      { icon: '📚', category: 'Reading', desc: 'Science fiction, philosophy, and popular science books. Reading broadens my perspective beyond the AI domain.', tags: ['Sci-Fi', 'Philosophy', 'Popular Science', 'Biography'] },
-      { icon: '✈️', category: 'Travel', desc: 'Exploring different cultures and landscapes around the world, especially mountainous regions and ancient cities.', tags: ['Mountains', 'Culture', 'Backpacking', 'Food'] },
-    ],
-  },
 };
 
 // ============================================================
 // HELPERS
 // ============================================================
-const TOP_VENUES = ['NeurIPS','ICML','ICLR','CVPR','ICCV','ECCV','ACL','EMNLP','NAACL'];
+const TOP_VENUES = ['NeurIPS','ICML','ICLR','CVPR','ICCV','ECCV','ACL','EMNLP','NAACL','MICCAI','MIA'];
 function isTopVenue(v) { return TOP_VENUES.some(t => v.startsWith(t)); }
 function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(s).replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"');
 }
 
 // ============================================================
@@ -620,7 +589,7 @@ function renderHeader() {
   document.getElementById('scholar-btn').href = DATA.googleScholar;
   document.getElementById('github-btn').href = DATA.github;
   document.getElementById('footer-copy').textContent =
-    '© ' + new Date().getFullYear() + ' ' + DATA.name + '. Last updated: June 2025.';
+    '© ' + new Date().getFullYear() + ' ' + DATA.name + '. Last updated: June 2026.';
 }
 
 function renderAvatar() {
@@ -648,7 +617,6 @@ function renderEducation() {
     '<p class="edu-degree">' + esc(e.degree) + '</p>' +
     '<p class="edu-school">' + esc(e.school) + '</p>' +
     '<p class="edu-year">' + esc(e.year) + '</p>' +
-    (e.advisor ? '<p class="edu-advisor">' + esc(e.advisor) + '</p>' : '') +
     '</div>'
   ).join('');
 }
@@ -665,7 +633,7 @@ function renderAwards() {
 
 function renderBio() {
   document.getElementById('bio-content').innerHTML =
-    DATA.bio.map(p => '<p class="bio-text">' + esc(p) + '</p>').join('');
+    DATA.bio.map(p => '<p class="bio-text">' + p + '</p>').join('');
 }
 
 // News with expand/collapse
@@ -694,9 +662,9 @@ document.getElementById('news-toggle-btn').addEventListener('click', function() 
 var PUB_FILTERS = [
   { key: 'all', label: 'All' },
   { key: 'selected', label: '★ Selected' },
+  { key: '2026', label: '2026' },
   { key: '2025', label: '2025' },
   { key: '2024', label: '2024' },
-  { key: '2023', label: '2023' },
 ];
 var activeFilter = 'all';
 
@@ -749,26 +717,9 @@ function renderPubList() {
   }).join('');
 }
 
-function renderTalks() {
-  document.getElementById('talks-list').innerHTML = DATA.talks.map(function(t) {
-    return '<div class="talk-item">' +
-      '<p class="talk-title">' + esc(t.title) + '</p>' +
-      '<p class="talk-meta">' + esc(t.event) + ' · ' + esc(t.date) + ' · ' + esc(t.location) + '</p>' +
-      '</div>';
-  }).join('');
-}
-
-function renderLife() {
-  document.getElementById('life-intro').textContent = DATA.life.intro;
-  document.getElementById('hobbies-grid').innerHTML = DATA.life.hobbies.map(function(h) {
-    return '<div class="hobby-card">' +
-      '<div class="hobby-header">' +
-      '<span class="hobby-emoji">' + h.icon + '</span>' +
-      '<span class="hobby-cat">' + esc(h.category) + '</span>' +
-      '</div>' +
-      '<p class="hobby-desc">' + esc(h.desc) + '</p>' +
-      '<div class="hobby-tags">' + h.tags.map(function(t) { return '<span class="hobby-tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
-      '</div>';
+function renderService() {
+  document.getElementById('service-list').innerHTML = DATA.service.map(function(s) {
+    return '<div class="service-item">' + esc(s) + '</div>';
   }).join('');
 }
 
@@ -782,8 +733,7 @@ renderBio();
 renderNews();
 renderPubFilters();
 renderPubList();
-renderTalks();
-renderLife();
+renderService();
 </script>
 </body>
 </html>
