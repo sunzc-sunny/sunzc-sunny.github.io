@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhicheng Sun | Academic Homepage</title>
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f5f5;
+      color: rgba(0,0,0,0.85);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ===== Color Variables ===== */
+    :root {
+      --primary: rgba(48,119,241,1);
+      --primary-hover: rgba(26,95,213,1);
+      --primary-light: rgba(235,242,255,1);
+      --primary-light-hover: rgba(214,229,255,1);
+      --success: rgba(0,171,71,1);
+      --success-light: rgba(225,250,235,1);
+      --warning: rgba(253,99,33,1);
+      --warning-light: rgba(255,238,229,1);
+      --info: rgba(48,119,241,1);
+      --info-light: rgba(235,242,255,1);
+      --text-title: rgba(0,0,0,0.85);
+      --text-paragraph: rgba(0,0,0,0.70);
+      --text-description: rgba(0,0,0,0.53);
+      --text-placeholder: rgba(0,0,0,0.42);
+      --bg: #ffffff;
+      --bg-1: #fafafa;
+      --bg-page: #f5f5f5;
+      --fill: rgba(0,0,0,0.03);
+      --fill-hover: rgba(0,0,0,0.05);
+      --line-divider: rgba(0,0,0,0.08);
+      --line-stroke: rgba(0,0,0,0.10);
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-pill: 999px;
+    }
+
+    /* ===== Layout ===== */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line-divider);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-title);
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-description);
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line-divider);
+      padding: 64px 0;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+    .avatar-wrap {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--primary-light);
+      box-shadow: 0 4px 20px rgba(48,119,241,0.15);
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar-placeholder {
+      font-size: 56px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .hero-info { flex: 1; }
+    .hero-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-title);
+      margin-bottom: 4px;
+    }
+    .hero-name-cn {
+      font-size: 16px;
+      color: var(--text-description);
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .hero-title {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .hero-affil {
+      font-size: 14px;
+      color: var(--text-paragraph);
+      margin-bottom: 20px;
+    }
+    .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      transition: background 0.18s, color 0.18s;
+      cursor: pointer;
+    }
+    .contact-btn.primary-light {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-light-hover);
+    }
+    .contact-btn.primary-light:hover { background: var(--primary-light-hover); }
+    .contact-btn.fill {
+      background: var(--fill);
+      color: var(--text-paragraph);
+      border: 1px solid var(--line-divider);
+    }
+    .contact-btn.fill:hover { background: var(--fill-hover); }
+    .contact-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ===== Main Two-Column Layout ===== */
+    .main-content {
+      padding: 40px 0 60px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .sidebar { width: 280px; flex-shrink: 0; display: flex; flex-direction: column; gap: 20px; }
+    .main-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+
+    /* ===== Cards ===== */
+    .card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 1px solid var(--line-divider);
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-title);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title-bar {
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      border-radius: var(--radius-pill);
+      flex-shrink: 0;
+    }
+    .bar-primary { background: var(--primary); }
+    .bar-success { background: var(--success); }
+    .bar-warning { background: var(--warning); }
+    .bar-info { background: var(--info); }
+
+    /* ===== Research Interests ===== */
+    .interests-list { display: flex; flex-direction: column; gap: 8px; }
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-paragraph);
+    }
+    .interest-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* ===== Education ===== */
+    .edu-list { display: flex; flex-direction: column; gap: 16px; }
+    .edu-item { border-left: 2px solid var(--primary-light); padding-left: 12px; }
+    .edu-degree { font-size: 14px; font-weight: 500; color: var(--text-title); margin-bottom: 2px; }
+    .edu-school { font-size: 13px; color: var(--text-paragraph); margin-bottom: 2px; }
+    .edu-year { font-size: 13px; color: var(--text-description); }
+    .edu-advisor { font-size: 13px; color: var(--text-description); }
+
+    /* ===== Awards ===== */
+    .awards-list { display: flex; flex-direction: column; gap: 12px; }
+    .award-item { display: flex; gap: 10px; align-items: flex-start; }
+    .award-year { font-size: 13px; font-weight: 500; color: var(--warning); flex-shrink: 0; min-width: 36px; }
+    .award-name { font-size: 13px; font-weight: 500; color: var(--text-paragraph); margin-bottom: 1px; }
+    .award-org { font-size: 12px; color: var(--text-description); }
+
+    /* ===== About Me ===== */
+    .bio-text { font-size: 14px; color: var(--text-paragraph); line-height: 1.8; }
+    .bio-text + .bio-text { margin-top: 12px; }
+
+    /* ===== News ===== */
+    .news-list { display: flex; flex-direction: column; }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line-divider);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date { font-size: 13px; font-weight: 500; color: var(--primary); flex-shrink: 0; width: 80px; padding-top: 1px; }
+    .news-content { font-size: 14px; color: var(--text-paragraph); flex: 1; }
+    .news-toggle-btn {
+      margin-top: 12px;
+      background: none;
+      border: none;
+      font-size: 13px;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0;
+    }
+    .news-toggle-btn:hover { color: var(--primary-hover); }
+
+    /* ===== Publications ===== */
+    .pub-filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .pub-filter-btn {
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      border: 1px solid var(--line-divider);
+      background: var(--bg);
+      color: var(--text-description);
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .pub-filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .pub-filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .pub-list { display: flex; flex-direction: column; gap: 16px; }
+    .pub-card {
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 1px solid var(--line-divider);
+      background: var(--bg-1);
+    }
+    .pub-card.highlight {
+      border-color: var(--primary-light-hover);
+      background: var(--primary-light);
+    }
+    .pub-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+    .pub-venue-badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+    }
+    .pub-venue-badge.top { background: var(--success-light); color: var(--success); }
+    .pub-venue-badge.other { background: var(--info-light); color: var(--info); }
+    .pub-selected-badge {
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+    .pub-title { font-size: 14px; font-weight: 600; color: var(--text-title); margin-bottom: 4px; line-height: 1.5; }
+    .pub-authors { font-size: 13px; color: var(--text-description); margin-bottom: 10px; }
+    .pub-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .pub-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pub-tag {
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--fill);
+      color: var(--text-description);
+    }
+    .pub-links { display: flex; gap: 10px; margin-left: auto; }
+    .pub-link { font-size: 13px; color: var(--primary); }
+    .pub-link:hover { color: var(--primary-hover); }
+
+    /* ===== Talks ===== */
+    .talks-list { display: flex; flex-direction: column; }
+    .talk-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-divider);
+    }
+    .talk-item:last-child { border-bottom: none; }
+    .talk-title { font-size: 14px; font-weight: 500; color: var(--text-title); margin-bottom: 4px; }
+    .talk-meta { font-size: 13px; color: var(--text-description); }
+
+    /* ===== Life & Interests ===== */
+    .life-intro { font-size: 14px; color: var(--text-description); line-height: 1.8; margin-bottom: 20px; }
+    .hobbies-grid { display: flex; flex-direction: column; gap: 12px; }
+    .hobby-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line-divider);
+      padding: 16px;
+      background: var(--bg-1);
+      transition: border-color 0.18s;
+    }
+    .hobby-card:hover { border-color: var(--primary-light-hover); }
+    .hobby-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .hobby-emoji { font-size: 18px; line-height: 1; }
+    .hobby-cat { font-size: 14px; font-weight: 600; color: var(--text-title); }
+    .hobby-desc { font-size: 13px; color: var(--text-paragraph); line-height: 1.7; margin-bottom: 10px; }
+    .hobby-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .hobby-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 12px;
+      border: 1px solid var(--primary-light-hover);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid var(--line-divider);
+      background: var(--bg);
+      padding: 24px 0;
+      text-align: center;
+    }
+    .footer-copy { font-size: 13px; color: var(--text-description); margin-bottom: 4px; }
+    .footer-sub { font-size: 12px; color: var(--text-placeholder); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 820px) {
+      .hero-inner { flex-direction: column; text-align: center; gap: 28px; }
+      .contact-links { justify-content: center; }
+      .main-content { flex-direction: column; }
+      .sidebar { width: 100%; }
+      .nav-links { gap: 16px; }
+    }
+    @media (max-width: 500px) {
+      .nav-links a:nth-child(n+4) { display: none; }
+      .hero { padding: 40px 0; }
+      .avatar-wrap { width: 130px; height: 130px; }
+      .avatar-placeholder { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <span class="nav-logo" id="nav-name">Zhicheng Sun</span>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#life">Life</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="about">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="avatar-wrap" id="avatar-wrap">
+        <span class="avatar-placeholder" id="avatar-placeholder">Z</span>
+      </div>
+      <div class="hero-info">
+        <h1 class="hero-name" id="hero-name">Zhicheng Sun</h1>
+        <p class="hero-name-cn" id="hero-name-cn">孙志成</p>
+        <p class="hero-title" id="hero-title">Ph.D. Student in Artificial Intelligence</p>
+        <p class="hero-affil" id="hero-affil">School of Intelligence Science and Technology, Peking University</p>
+        <div class="contact-links">
+          <a class="contact-btn primary-light" id="email-btn" href="mailto:sunzc@stu.pku.edu.cn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span id="email-text">sunzc@stu.pku.edu.cn</span>
+          </a>
+          <a class="contact-btn fill" id="scholar-btn" href="https://scholar.google.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            Google Scholar
+          </a>
+          <a class="contact-btn fill" id="github-btn" href="https://github.com/sunzc-sunny" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Main Content ===== -->
+<div class="container">
+  <div class="main-content">
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="card">
+        <h2 class="card-title"><span class="card-title-bar bar-primary"></span>Research Interests</h2>
+        <ul class="interests-list" id="interests-list"></ul>
+      </div>
+      <div class="card">
+        <h2 class="card-title"><span class="card-title-bar bar-primary"></span>Education</h2>
+        <div class="edu-list" id="edu-list"></div>
+      </div>
+      <div class="card">
+        <h2 class="card-title"><span class="card-title-bar bar-warning"></span>Awards</h2>
+        <div class="awards-list" id="awards-list"></div>
+      </div>
+    </aside>
+
+    <!-- Right Main Column -->
+    <main class="main-col">
+      <div class="card">
+        <h2 class="card-title"><span class="card-title-bar bar-primary"></span>About Me</h2>
+        <div id="bio-content"></div>
+      </div>
+
+      <div class="card" id="news">
+        <h2 class="card-title"><span class="card-title-bar bar-success"></span>News</h2>
+        <div class="news-list" id="news-list"></div>
+        <button class="news-toggle-btn" id="news-toggle-btn" style="display:none"></button>
+      </div>
+
+      <div class="card" id="publications">
+        <h2 class="card-title"><span class="card-title-bar bar-primary"></span>Publications</h2>
+        <div class="pub-filters" id="pub-filters"></div>
+        <div class="pub-list" id="pub-list"></div>
+      </div>
+
+      <div class="card" id="talks">
+        <h2 class="card-title"><span class="card-title-bar bar-info"></span>Talks</h2>
+        <div class="talks-list" id="talks-list"></div>
+      </div>
+
+      <div class="card" id="life">
+        <h2 class="card-title"><span class="card-title-bar bar-warning"></span>Life &amp; Interests</h2>
+        <p class="life-intro" id="life-intro"></p>
+        <div class="hobbies-grid" id="hobbies-grid"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <p class="footer-copy" id="footer-copy"></p>
+  <p class="footer-sub">Built with pure HTML · CSS · JavaScript &nbsp;·&nbsp; Deploy to GitHub Pages</p>
+</footer>
+
+<script>
+// ============================================================
+// DATA — edit this section to personalize your homepage
+// ============================================================
+const DATA = {
+  name: 'Zhicheng Sun',
+  nameCn: '孙志成',
+  title: 'Ph.D. Student in Artificial Intelligence',
+  institution: 'Peking University',
+  department: 'School of Intelligence Science and Technology',
+  email: 'sunzc@stu.pku.edu.cn',
+  googleScholar: 'https://scholar.google.com',
+  github: 'https://github.com/sunzc-sunny',
+  // Replace with your real photo URL after uploading to GitHub repo
+  avatarUrl: '',
+
+  bio: [
+    'I am a Ph.D. student at the School of Intelligence Science and Technology, Peking University, under the supervision of Prof. XXX. My research focuses on Large Language Models (LLMs), Multimodal Learning, and AI for Science.',
+    'Before that, I received my B.S. degree from Peking University in 2021. I have interned at leading AI research labs including Tencent AI Lab, Alibaba DAMO Academy, and Microsoft Research Asia.',
+    'My research goal is to build AI systems that can reason, perceive, and act in the real world, bridging the gap between artificial intelligence and human intelligence.',
+  ],
+
+  interests: [
+    'Large Language Models',
+    'Multimodal Learning',
+    'Visual Question Answering',
+    'Knowledge Representation',
+    'AI for Science',
+  ],
+
+  education: [
+    { degree: 'Ph.D. in Artificial Intelligence', school: 'Peking University', year: '2021 – Present', advisor: 'Advisor: Prof. XXX' },
+    { degree: 'B.S. in Computer Science', school: 'Peking University', year: '2017 – 2021' },
+  ],
+
+  news: [
+    { date: 'Jun 2025', content: 'One paper accepted at ACL 2025 on multimodal reasoning.' },
+    { date: 'May 2025', content: 'Invited talk at VALSE 2025 Workshop on Vision-Language Models.' },
+    { date: 'Feb 2025', content: 'One paper accepted at ICLR 2025 on knowledge-grounded generation.' },
+    { date: 'Sep 2024', content: 'One paper accepted at NeurIPS 2024 on instruction tuning for LLMs.' },
+    { date: 'Jul 2024', content: 'Started internship at Microsoft Research Asia.' },
+  ],
+
+  publications: [
+    {
+      id: 'pub1', year: 2025, venue: 'ACL', highlight: true,
+      title: 'Towards Robust Multimodal Reasoning: A Comprehensive Benchmark and Analysis',
+      authors: 'Zhicheng Sun, Author B, Author C, Prof. XXX',
+      tags: ['Multimodal', 'Reasoning', 'Benchmark'],
+      pdf: '#', code: '#',
+    },
+    {
+      id: 'pub2', year: 2025, venue: 'ICLR', highlight: true,
+      title: 'Knowledge-Grounded Text Generation with Factual Consistency',
+      authors: 'Zhicheng Sun, Author D, Prof. XXX',
+      tags: ['LLM', 'Knowledge', 'Generation'],
+      pdf: '#', code: '#',
+    },
+    {
+      id: 'pub3', year: 2024, venue: 'NeurIPS',
+      title: 'Instruction Tuning with Diverse Feedback: Aligning LLMs to Human Preferences',
+      authors: 'Author E, Zhicheng Sun, Author F, Prof. XXX',
+      tags: ['LLM', 'RLHF', 'Alignment'],
+      pdf: '#', project: '#',
+    },
+    {
+      id: 'pub4', year: 2024, venue: 'EMNLP',
+      title: 'Visual Chain-of-Thought Prompting for Complex Scene Understanding',
+      authors: 'Zhicheng Sun, Author G, Author H',
+      tags: ['Multimodal', 'Chain-of-Thought', 'Vision-Language'],
+      pdf: '#', code: '#',
+    },
+    {
+      id: 'pub5', year: 2023, venue: 'ACL Findings',
+      title: 'SciMind: A Scientific Question Answering Dataset with Expert Annotations',
+      authors: 'Zhicheng Sun, Author I, Author J, Prof. XXX',
+      tags: ['AI for Science', 'QA', 'Dataset'],
+      pdf: '#',
+    },
+    {
+      id: 'pub6', year: 2023, venue: 'CVPR',
+      title: 'Multimodal Pretraining with Cross-Modal Contrastive Learning',
+      authors: 'Author K, Zhicheng Sun, Prof. XXX',
+      tags: ['Multimodal', 'Pretraining', 'Contrastive Learning'],
+      pdf: '#', code: '#',
+    },
+  ],
+
+  awards: [
+    { name: 'National Scholarship', year: '2023', organization: 'Ministry of Education of China' },
+    { name: 'Peking University Academic Excellence Award', year: '2022', organization: 'Peking University' },
+    { name: 'Outstanding Graduate Student', year: '2021', organization: 'Peking University' },
+  ],
+
+  talks: [
+    { title: 'Multimodal Reasoning in the Era of Large Language Models', event: 'VALSE 2025 Workshop', date: 'May 2025', location: 'Chengdu, China' },
+    { title: 'Knowledge-Grounded Generation for Factual Consistency', event: 'Microsoft Research Asia Seminar', date: 'Sep 2024', location: 'Beijing, China' },
+  ],
+
+  life: {
+    intro: 'Beyond academia, I enjoy a variety of hobbies that keep me inspired and energized. I believe a well-rounded life fuels creativity in research.',
+    hobbies: [
+      { icon: '🎵', category: 'Music', desc: 'I play guitar and enjoy listening to jazz and classical music. Music helps me unwind after long research sessions.', tags: ['Guitar', 'Jazz', 'Classical', 'Piano'] },
+      { icon: '📷', category: 'Photography', desc: 'Street photography and landscape shots during travels. I love capturing fleeting moments and natural beauty.', tags: ['Street', 'Landscape', 'Film', 'Portrait'] },
+      { icon: '🏀', category: 'Sports', desc: 'Basketball, hiking, and cycling to stay active and clear my mind. Sports teach me teamwork and persistence.', tags: ['Basketball', 'Hiking', 'Cycling', 'Swimming'] },
+      { icon: '📚', category: 'Reading', desc: 'Science fiction, philosophy, and popular science books. Reading broadens my perspective beyond the AI domain.', tags: ['Sci-Fi', 'Philosophy', 'Popular Science', 'Biography'] },
+      { icon: '✈️', category: 'Travel', desc: 'Exploring different cultures and landscapes around the world, especially mountainous regions and ancient cities.', tags: ['Mountains', 'Culture', 'Backpacking', 'Food'] },
+    ],
+  },
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+const TOP_VENUES = ['NeurIPS','ICML','ICLR','CVPR','ICCV','ECCV','ACL','EMNLP','NAACL'];
+function isTopVenue(v) { return TOP_VENUES.some(t => v.startsWith(t)); }
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ============================================================
+// RENDER
+// ============================================================
+function renderHeader() {
+  document.title = DATA.name + ' | Academic Homepage';
+  document.getElementById('nav-name').textContent = DATA.name;
+  document.getElementById('hero-name').textContent = DATA.name;
+  document.getElementById('hero-name-cn').textContent = DATA.nameCn;
+  document.getElementById('hero-title').textContent = DATA.title;
+  document.getElementById('hero-affil').textContent = DATA.department + ', ' + DATA.institution;
+  document.getElementById('email-btn').href = 'mailto:' + DATA.email;
+  document.getElementById('email-text').textContent = DATA.email;
+  document.getElementById('scholar-btn').href = DATA.googleScholar;
+  document.getElementById('github-btn').href = DATA.github;
+  document.getElementById('footer-copy').textContent =
+    '© ' + new Date().getFullYear() + ' ' + DATA.name + '. Last updated: June 2025.';
+}
+
+function renderAvatar() {
+  const wrap = document.getElementById('avatar-wrap');
+  if (DATA.avatarUrl) {
+    const img = document.createElement('img');
+    img.src = DATA.avatarUrl;
+    img.alt = DATA.name;
+    wrap.innerHTML = '';
+    wrap.appendChild(img);
+  } else {
+    document.getElementById('avatar-placeholder').textContent = DATA.name.charAt(0);
+  }
+}
+
+function renderInterests() {
+  document.getElementById('interests-list').innerHTML = DATA.interests.map(i =>
+    '<li class="interest-item"><span class="interest-dot"></span>' + esc(i) + '</li>'
+  ).join('');
+}
+
+function renderEducation() {
+  document.getElementById('edu-list').innerHTML = DATA.education.map(e =>
+    '<div class="edu-item">' +
+    '<p class="edu-degree">' + esc(e.degree) + '</p>' +
+    '<p class="edu-school">' + esc(e.school) + '</p>' +
+    '<p class="edu-year">' + esc(e.year) + '</p>' +
+    (e.advisor ? '<p class="edu-advisor">' + esc(e.advisor) + '</p>' : '') +
+    '</div>'
+  ).join('');
+}
+
+function renderAwards() {
+  document.getElementById('awards-list').innerHTML = DATA.awards.map(a =>
+    '<div class="award-item">' +
+    '<span class="award-year">' + esc(a.year) + '</span>' +
+    '<div><p class="award-name">' + esc(a.name) + '</p>' +
+    '<p class="award-org">' + esc(a.organization) + '</p></div>' +
+    '</div>'
+  ).join('');
+}
+
+function renderBio() {
+  document.getElementById('bio-content').innerHTML =
+    DATA.bio.map(p => '<p class="bio-text">' + esc(p) + '</p>').join('');
+}
+
+// News with expand/collapse
+var newsExpanded = false;
+var NEWS_PREVIEW = 3;
+function renderNews() {
+  var visible = newsExpanded ? DATA.news : DATA.news.slice(0, NEWS_PREVIEW);
+  document.getElementById('news-list').innerHTML = visible.map(n =>
+    '<div class="news-item">' +
+    '<span class="news-date">' + esc(n.date) + '</span>' +
+    '<span class="news-content">' + esc(n.content) + '</span>' +
+    '</div>'
+  ).join('');
+  var btn = document.getElementById('news-toggle-btn');
+  if (DATA.news.length > NEWS_PREVIEW) {
+    btn.style.display = 'block';
+    btn.textContent = newsExpanded ? 'Show less ↑' : 'Show all (' + DATA.news.length + ') ↓';
+  }
+}
+document.getElementById('news-toggle-btn').addEventListener('click', function() {
+  newsExpanded = !newsExpanded;
+  renderNews();
+});
+
+// Publications with filter
+var PUB_FILTERS = [
+  { key: 'all', label: 'All' },
+  { key: 'selected', label: '★ Selected' },
+  { key: '2025', label: '2025' },
+  { key: '2024', label: '2024' },
+  { key: '2023', label: '2023' },
+];
+var activeFilter = 'all';
+
+function getFilteredPubs() {
+  if (activeFilter === 'all') return DATA.publications;
+  if (activeFilter === 'selected') return DATA.publications.filter(function(p) { return p.highlight; });
+  return DATA.publications.filter(function(p) { return String(p.year) === activeFilter; });
+}
+
+function renderPubFilters() {
+  var wrap = document.getElementById('pub-filters');
+  wrap.innerHTML = PUB_FILTERS.map(function(f) {
+    return '<button class="pub-filter-btn' + (f.key === activeFilter ? ' active' : '') +
+      '" data-filter="' + f.key + '">' + f.label + '</button>';
+  }).join('');
+  wrap.querySelectorAll('.pub-filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      activeFilter = this.dataset.filter;
+      renderPubFilters();
+      renderPubList();
+    });
+  });
+}
+
+function renderPubList() {
+  var pubs = getFilteredPubs();
+  var list = document.getElementById('pub-list');
+  if (!pubs.length) {
+    list.innerHTML = '<p style="color:var(--text-placeholder);font-size:14px;padding:12px 0;">No publications found.</p>';
+    return;
+  }
+  list.innerHTML = pubs.map(function(p) {
+    var venueClass = isTopVenue(p.venue) ? 'top' : 'other';
+    var links = [
+      p.pdf ? '<a class="pub-link" href="' + esc(p.pdf) + '" target="_blank">[PDF]</a>' : '',
+      p.code ? '<a class="pub-link" href="' + esc(p.code) + '" target="_blank">[Code]</a>' : '',
+      p.project ? '<a class="pub-link" href="' + esc(p.project) + '" target="_blank">[Project]</a>' : '',
+    ].filter(Boolean).join('');
+    return '<div class="pub-card' + (p.highlight ? ' highlight' : '') + '">' +
+      '<div class="pub-meta">' +
+      '<span class="pub-venue-badge ' + venueClass + '">' + esc(p.venue) + ' ' + p.year + '</span>' +
+      (p.highlight ? '<span class="pub-selected-badge">★ Selected</span>' : '') +
+      '</div>' +
+      '<p class="pub-title">' + esc(p.title) + '</p>' +
+      '<p class="pub-authors">' + esc(p.authors) + '</p>' +
+      '<div class="pub-footer">' +
+      '<div class="pub-tags">' + p.tags.map(function(t) { return '<span class="pub-tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
+      '<div class="pub-links">' + links + '</div>' +
+      '</div></div>';
+  }).join('');
+}
+
+function renderTalks() {
+  document.getElementById('talks-list').innerHTML = DATA.talks.map(function(t) {
+    return '<div class="talk-item">' +
+      '<p class="talk-title">' + esc(t.title) + '</p>' +
+      '<p class="talk-meta">' + esc(t.event) + ' · ' + esc(t.date) + ' · ' + esc(t.location) + '</p>' +
+      '</div>';
+  }).join('');
+}
+
+function renderLife() {
+  document.getElementById('life-intro').textContent = DATA.life.intro;
+  document.getElementById('hobbies-grid').innerHTML = DATA.life.hobbies.map(function(h) {
+    return '<div class="hobby-card">' +
+      '<div class="hobby-header">' +
+      '<span class="hobby-emoji">' + h.icon + '</span>' +
+      '<span class="hobby-cat">' + esc(h.category) + '</span>' +
+      '</div>' +
+      '<p class="hobby-desc">' + esc(h.desc) + '</p>' +
+      '<div class="hobby-tags">' + h.tags.map(function(t) { return '<span class="hobby-tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
+      '</div>';
+  }).join('');
+}
+
+// Init
+renderHeader();
+renderAvatar();
+renderInterests();
+renderEducation();
+renderAwards();
+renderBio();
+renderNews();
+renderPubFilters();
+renderPubList();
+renderTalks();
+renderLife();
+</script>
+</body>
+</html>
